@@ -1,28 +1,13 @@
-import { Header } from '@/components/Header';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useNavigate } from 'react-router-dom';
 import { Leaf, Camera, Search, Smartphone, Calendar, RefreshCw, Info } from 'lucide-react';
 
 export default function About() {
   const { t, language } = useLanguage();
-  const navigate = useNavigate();
 
   const features = [
-    {
-      icon: Camera,
-      titleKey: 'about.feature1.title',
-      descKey: 'about.feature1.desc',
-    },
-    {
-      icon: Search,
-      titleKey: 'about.feature2.title',
-      descKey: 'about.feature2.desc',
-    },
-    {
-      icon: Smartphone,
-      titleKey: 'about.feature3.title',
-      descKey: 'about.feature3.desc',
-    },
+    { icon: Camera, titleKey: 'about.feature1.title', descKey: 'about.feature1.desc' },
+    { icon: Search, titleKey: 'about.feature2.title', descKey: 'about.feature2.desc' },
+    { icon: Smartphone, titleKey: 'about.feature3.title', descKey: 'about.feature3.desc' },
   ];
 
   const steps = [
@@ -34,8 +19,6 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header showBack onBack={() => navigate('/')} />
-      
       <main className="pt-20 pb-8 px-4">
         <div className="max-w-lg mx-auto space-y-8">
           {/* App Info Section */}
@@ -168,9 +151,7 @@ export default function About() {
             <p className={`text-sm text-muted-foreground ${language === 'bn' ? 'font-bangla' : ''}`}>
               {t('about.footer.madeWith')}
             </p>
-            <p className="text-xs text-muted-foreground">
-              © 2025 AgriDoctor
-            </p>
+            <p className="text-xs text-muted-foreground">© 2025 AgriDoctor</p>
           </section>
         </div>
       </main>

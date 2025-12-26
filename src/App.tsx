@@ -9,9 +9,9 @@ import { InstallPrompt } from "@/components/InstallPrompt";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Login from "./pages/Login";
+import Features from "./pages/Features";
 import NotFound from "./pages/NotFound";
-import Navbar from "./components/Navbar";
-
+import Navbar from "@/components/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -20,18 +20,23 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <TooltipProvider>
+          {/* Toast Notifications */}
           <Toaster />
           <Sonner position="top-center" />
 
           <BrowserRouter>
             <Navbar />
 
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            {/* Add padding top equal to Navbar height to avoid content overlap */}
+            <main className="pt-16">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
           </BrowserRouter>
 
           <InstallPrompt />
