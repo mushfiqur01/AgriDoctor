@@ -185,5 +185,3 @@ Made with ❤️ for farmers
 © 2025 AgriDoctor
 
 
-Made with ❤️ for farmers
-© 2025 AgriDoctor
