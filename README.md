@@ -1,191 +1,124 @@
-🌱 AgriDoctor – Crop Disease Detection PWA (Version 2)
+# 🌱 AgriDoctor – Crop Disease Detection PWA (Version 2)
 
-AgriDoctor is an AI-powered Progressive Web App (PWA) that helps farmers detect crop diseases instantly using machine learning. The app works offline after initial setup, making it ideal for rural areas with limited or no internet connectivity.
+AgriDoctor is an AI-powered Progressive Web App (PWA) that helps farmers detect crop diseases instantly using machine learning. The app works completely offline after initial setup, making it ideal for use in rural areas with limited internet connectivity.
 
-Version 2 introduces improved navigation, prediction history tracking, and farmer-friendly crop knowledge pages.
+> Version 2 introduces improved navigation, prediction history tracking, and farmer-friendly crop knowledge pages.
 
-✨ Features
-🔍 AI-Powered Disease Detection
+---
 
-Uses TensorFlow.js machine learning models
+## ✨ Features
 
-Identifies crop diseases from leaf images
+### 🔍 AI-Powered Disease Detection
+- Uses TensorFlow.js machine learning models
+- Identifies crop diseases from leaf images
 
-🌾 Multi-Crop Support
+### 🌾 Multi-Crop Support
+- Corn
+- Potato
+- Wheat
 
-Corn
+### 📱 Offline-First PWA
+- Works completely offline after initial model download
 
-Potato
+### 🌐 Bilingual Support
+- English
+- Bengali (বাংলা)
 
-Wheat
+### 📷 Camera & Gallery Integration
+- Capture photos using camera
+- Upload images from device gallery
 
-📱 Offline-First PWA
+### 🔄 Blur Detection
+- Automatically detects blurry images
+- Prompts users to retake clearer photos
 
-Fully functional offline after model download
+### 🍃 Smart Leaf Detection
+- Uses COCO-SSD to detect leaf regions
+- Improves prediction accuracy
 
-Ideal for rural and low-connectivity environments
+### 💡 Treatment Solutions
+- Disease description
+- Recommended solutions for farmers
 
-🌐 Bilingual Support
+---
 
-English
+## 🆕 What’s New in Version 2
 
-Bengali (বাংলা)
+### 🧭 Navbar
+- Added a navigation bar for better usability
+- Easy access to Home, History, Features, and About pages
 
-📷 Camera & Gallery Integration
+### 🕒 Prediction History Page
+- Stores previous predictions using browser localStorage
+- Allows farmers to review past disease detection results
+- Works fully offline
 
-Capture photos directly
+### 📘 Features Page (Farmer Knowledge)
+- New Features page added
+- Provides basic information about:
+  - Corn
+  - Potato
+  - Wheat
+- Helps farmers gain general crop knowledge and awareness
 
-Upload images from device gallery
+---
 
-🔄 Blur Detection
+## 🦠 Supported Diseases
 
-Automatically detects blurry images
+### 🌽 Corn
+- Common Rust
+- Gray Leaf Spot
+- Leaf Blight
+- Healthy Detection
 
-Prompts user to retake clearer photos
+### 🥔 Potato
+- Early Blight
+- Late Blight
+- Healthy Detection
 
-🍃 Smart Leaf Detection
+### 🌾 Wheat
+- Brown Rust
+- Yellow Rust
+- Healthy Detection
 
-Uses COCO-SSD
+---
 
-Automatically detects and crops leaf regions for better accuracy
+## 🛠️ Tech Stack
 
-💡 Treatment Solutions
+- Frontend: React 18 + TypeScript
+- Build Tool: Vite
+- Styling: Tailwind CSS + shadcn/ui
+- Machine Learning: TensorFlow.js
+- Object Detection: COCO-SSD
+- PWA: vite-plugin-pwa + Workbox
+- Routing: React Router DOM
+- State Management: React Context API
+- Storage: localStorage (Prediction History)
 
-Disease description
+---
 
-Suggested treatments and solutions
+## 📦 Installation
 
-🆕 What’s New in Version 2
-🧭 Navbar Navigation
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or bun
 
-Added a responsive navigation bar
+### Setup
 
-Easy access to:
-
-Home
-
-History
-
-Features
-
-About
-
-🕒 Prediction History Page
-
-Stores previous predictions using localStorage
-
-Farmers can:
-
-View past disease detection results
-
-Track crop health over time
-
-Works fully offline
-
-📘 Features Page (Farmer Knowledge Hub)
-
-Dedicated Features page for farmers
-
-Provides basic agricultural knowledge for:
-
-Corn
-
-Potato
-
-Wheat
-
-Helps farmers:
-
-Understand crops better
-
-Learn common disease patterns
-
-Improve early decision-making
-
-🦠 Supported Diseases
-🌽 Corn
-
-Common Rust
-
-Gray Leaf Spot
-
-Leaf Blight
-
-Healthy Detection
-
-🥔 Potato
-
-Early Blight
-
-Late Blight
-
-Healthy Detection
-
-🌾 Wheat
-
-Brown Rust
-
-Yellow Rust
-
-Healthy Detection
-
-🛠️ Tech Stack
-
-Frontend Framework: React 18 + TypeScript
-
-Build Tool: Vite
-
-Styling: Tailwind CSS + shadcn/ui
-
-ML Framework: TensorFlow.js
-
-Object Detection: COCO-SSD (@tensorflow-models/coco-ssd)
-
-PWA: vite-plugin-pwa + Workbox
-
-State Management: React Context API
-
-Routing: React Router DOM
-
-Storage: Browser localStorage (Prediction History)
-
-📦 Installation
-Prerequisites
-
-Node.js v18 or higher
-
-npm or bun
-
-Setup
-# Clone the repository
+```bash
 git clone https://github.com/Dina-Shanjida/3200_AgriDoctor.git
-
-# Navigate to project directory
 cd 3200_AgriDoctor
-
-# Checkout version2 branch
 git checkout version2
-
-# Install dependencies
 npm install
-# or
-bun install
-
-# Start development server
 npm run dev
-# or
-bun dev
-
-
-The app will be available at:
-👉 http://localhost:8080
+```
 
 🏗️ Project Structure
+
 src/
 ├── components/
-│   ├── ui/                 # shadcn/ui components
-│   ├── Header.tsx          # Navbar
-│   ├── PhotoTips.tsx
+│   ├── ui/
+│   ├── Header.tsx
 │   └── ...
 ├── contexts/
 │   └── LanguageContext.tsx
@@ -194,8 +127,8 @@ src/
 ├── pages/
 │   ├── Index.tsx
 │   ├── About.tsx
-│   ├── History.tsx         # Prediction history page (NEW)
-│   ├── Features.tsx        # Crop features & info page (NEW)
+│   ├── History.tsx
+│   ├── Features.tsx
 │   └── NotFound.tsx
 ├── screens/
 │   ├── HomeScreen.tsx
@@ -207,42 +140,43 @@ src/
 │   └── modelPreloader.ts
 └── hooks/
 
+
 🧠 ML Pipeline
 
-Image Capture (Camera / Gallery)
+1. Image Capture
 
-Blur Detection (Laplacian Variance)
+2. Blur Detection
 
-Leaf Detection (COCO-SSD)
+3. Leaf Detection
 
-Image Preprocessing (224×224, RGB normalization)
+4. Image Preprocessing
 
-Model Inference (Crop-specific TensorFlow.js model)
+5. Model Inference
 
-Results Display (Disease name, description, solution)
+6. Result Display
 
-Save Prediction to History (localStorage)
+7. Save Result to History (localStorage)
+
 
 🌍 Localization
 
-English (Default)
+1. English
 
-Bengali (বাংলা)
+2. Bengali (বাংলা)
 
-Language preference is stored in localStorage and persists across sessions.
+Language preference is stored in localStorage.
 
 📄 License
 
-This project is open-source and available under the MIT License.
+This project is open source and available under the MIT License.
 
 👥 Contributing
 
-Contributions are welcome!
-Feel free to open issues or submit pull requests.
+Contributions are welcome. Feel free to submit a Pull Request.
 
 📞 Support
 
-For support or bug reports, please open an issue on GitHub.
+For support, please open an issue on the GitHub repository.
 
 Made with ❤️ for farmers
 © 2025 AgriDoctor
