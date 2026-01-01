@@ -1,3 +1,5 @@
+// src/App.tsx
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,15 +8,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { InstallPrompt } from "@/components/InstallPrompt";
 
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Login from "./pages/Login";
-import Features from "./pages/Features";
-import NotFound from "./pages/NotFound";
 import Navbar from "@/components/Navbar";
 
+import Index from "./pages/Index";
+import About from "./pages/About";
+import Features from "./pages/Features";
+import History from "./pages/History";
+import NotFound from "./pages/NotFound";
+
+/* =====================
+   QUERY CLIENT
+===================== */
 const queryClient = new QueryClient();
 
+/* =====================
+   APP
+===================== */
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
@@ -25,20 +34,22 @@ const App = () => {
           <Sonner position="top-center" />
 
           <BrowserRouter>
+            {/* Global Navbar */}
             <Navbar />
 
-            {/* Add padding top equal to Navbar height to avoid content overlap */}
+            {/* Main Content */}
             <main className="pt-16">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/features" element={<Features />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/history" element={<History />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
           </BrowserRouter>
 
+          {/* PWA Install Prompt */}
           <InstallPrompt />
         </TooltipProvider>
       </LanguageProvider>

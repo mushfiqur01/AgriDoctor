@@ -1,3 +1,4 @@
+// src/components/Header.tsx
 import { LanguageToggle } from './LanguageToggle';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Leaf, Info } from 'lucide-react';
@@ -7,9 +8,10 @@ interface HeaderProps {
   showBack?: boolean;
   onBack?: () => void;
   hideAbout?: boolean;
+  title?: string;  // NEW optional title prop
 }
 
-export function Header({ showBack, onBack, hideAbout }: HeaderProps) {
+export function Header({ showBack, onBack, hideAbout, title }: HeaderProps) {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
 
@@ -35,7 +37,7 @@ export function Header({ showBack, onBack, hideAbout }: HeaderProps) {
                 <Leaf className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className={`font-bold text-foreground ${language === 'bn' ? 'font-bangla' : ''}`}>
-                {t('app.name')}
+                {title ?? t('app.name')}
               </span>
             </div>
           )}

@@ -2,7 +2,9 @@ import { NavLink } from "@/components/NavLink";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
 
   useEffect(() => {
     if (darkMode) {
@@ -18,7 +20,7 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/features", label: "Features" },
-    { path: "/contact", label: "Contact" },
+    { path: "/history", label: "History" },
   ];
 
   return (
@@ -32,7 +34,7 @@ const Navbar = () => {
           AgriDoctor
         </NavLink>
 
-        {/* Navigation Links */}
+        {/* Navigation */}
         <div className="flex items-center gap-6">
           {navLinks.map(({ path, label }) => (
             <NavLink
@@ -53,15 +55,6 @@ const Navbar = () => {
           >
             {darkMode ? "🌞 Light" : "🌙 Dark"}
           </button>
-
-          {/* Login Button */}
-          <NavLink
-            to="/login"
-            className="rounded-md bg-green-600 px-4 py-2 text-white hover:bg-green-700 transition"
-            activeClassName="bg-green-800"
-          >
-            Login
-          </NavLink>
         </div>
       </div>
     </nav>
