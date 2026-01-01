@@ -20,12 +20,10 @@ const Index = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [modelsReady, setModelsReady] = useState(areModelsPreloaded());
 
-  // Show model preloader first (before language selection)
   if (!modelsReady) {
     return <ModelPreloader onComplete={() => setModelsReady(true)} />;
   }
 
-  // Show language selection if not selected
   if (!isLanguageSelected) {
     return <LanguageSelection />;
   }
@@ -49,13 +47,13 @@ const Index = () => {
       setCurrentScreen('result');
     } catch (error) {
       console.error('Analysis error:', error);
-      
+
       if (error instanceof BlurDetectionError) {
-        // Show blur-specific error with tips
-        const blurMessage = language === 'en' 
-          ? '❗ The image is too blurry to analyze.\n\nPlease take a clearer photo:\n• Hold camera steady\n• Ensure good lighting\n• Focus on the leaf\n• Avoid motion blur'
-          : '❗ ছবিটি বিশ্লেষণের জন্য অত্যন্ত ঝাপসা।\n\nঅনুগ্রহ করে আরও পরিষ্কার ছবি তুলুন:\n• ক্যামেরা স্থির রাখুন\n• ভালো আলো নিশ্চিত করুন\n• পাতায় ফোকাস করুন\n• মোশন ব্লার এড়িয়ে চলুন';
-        
+        const blurMessage =
+          language === 'en'
+            ? '❗ The image is too blurry to analyze.\n\nPlease take a clearer photo:\n• Hold camera steady\n• Ensure good lighting\n• Focus on the leaf\n• Avoid motion blur'
+            : '❗ ছবিটি বিশ্লেষণের জন্য অত্যন্ত ঝাপসা।\n\nঅনুগ্রহ করে আরও পরিষ্কার ছবি তুলুন:\n• ক্যামেরা স্থির রাখুন\n• ভালো আলো নিশ্চিত করুন\n• পাতায় ফোকাস করুন\n• মোশন ব্লার এড়িয়ে চলুন';
+
         toast.error(blurMessage, {
           duration: 6000,
         });
@@ -79,31 +77,38 @@ const Index = () => {
     setCurrentScreen('home');
   };
 
-  // Render current screen
   switch (currentScreen) {
     case 'preview':
       return (
-        <ImagePreview
-          imageData={selectedImage!}
-          cropType={selectedCrop!}
-          onBack={handleBackToHome}
-          onAnalyze={handleAnalyze}
-          isAnalyzing={isAnalyzing}
-        />
+        <div className="pt-16">
+          <ImagePreview
+            imageData={selectedImage!}
+            cropType={selectedCrop!}
+            onBack={handleBackToHome}
+            onAnalyze={handleAnalyze}
+            isAnalyzing={isAnalyzing}
+          />
+        </div>
       );
-    
+
     case 'result':
       return (
-        <PredictionResultScreen
-          imageData={selectedImage!}
-          result={predictionResult!}
-          onScanAgain={handleScanAgain}
-          onGoHome={handleBackToHome}
-        />
+        <div className="pt-16">
+          <PredictionResultScreen
+            imageData={selectedImage!}
+            result={predictionResult!}
+            onScanAgain={handleScanAgain}
+            onGoHome={handleBackToHome}
+          />
+        </div>
       );
-    
+
     default:
-      return <HomeScreen onImageSelected={handleImageSelected} />;
+      return (
+        <div className="pt-16">
+          <HomeScreen onImageSelected={handleImageSelected} />
+        </div>
+      );
   }
 };
 
