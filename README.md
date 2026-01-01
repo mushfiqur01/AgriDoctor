@@ -2,7 +2,7 @@
 
 AgriDoctor is an AI-powered Progressive Web App (PWA) that helps farmers detect crop diseases instantly using machine learning. The app works completely offline after initial setup, making it ideal for use in rural areas with limited internet connectivity.
 
-![AgriDoctor](https://img.shields.io/badge/Version-1.0.0-green) ![Release](https://img.shields.io/badge/Release-7th%20December%202025-blue) ![License](https://img.shields.io/badge/License-MIT-yellow)
+![AgriDoctor](https://img.shields.io/badge/Version-2.0.0-green) ![Release](https://img.shields.io/badge/Release-7th%20December%202025-blue) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ## ✨ Features
 
@@ -14,6 +14,12 @@ AgriDoctor is an AI-powered Progressive Web App (PWA) that helps farmers detect 
 - **🔄 Blur Detection** - Automatically detects blurry images and prompts for clearer photos
 - **🍃 Smart Leaf Detection** - Uses COCO-SSD to identify and crop leaf regions for better accuracy
 - **💡 Treatment Solutions** - Provides disease descriptions and recommended solutions
+
+## 🆕 What’s New in Version 2
+
+- **🧭 Navigation Bar** - Added a navigation bar for improved usability and quick access to Home, History, Features, and About pages
+- **🕒 Prediction History** - Saves previous disease detection results using browser localStorage, allowing farmers to review past predictions fully offline
+- **📘 Farmer Knowledge (Features Page)** - Introduced a new Features page that provides basic crop information and awareness for Corn, Potato, and Wheat
 
 ## 🦠 Supported Diseases
 
@@ -43,6 +49,7 @@ AgriDoctor is an AI-powered Progressive Web App (PWA) that helps farmers detect 
 - **PWA**: vite-plugin-pwa with Workbox
 - **State Management**: React Context API
 - **Routing**: React Router DOM
+- **Storage**: localStorage (Prediction History)
 
 ## 📦 Installation
 
@@ -54,7 +61,7 @@ AgriDoctor is an AI-powered Progressive Web App (PWA) that helps farmers detect 
 
 ```bash
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone https://github.com/mushfiqur01/AgriDoctor.git
 
 # Navigate to project directory
 cd agridoctor
@@ -104,6 +111,8 @@ src/
 ├── pages/              # Page components
 │   ├── Index.tsx       # Main entry point
 │   ├── About.tsx       # About page
+│   ├── History.tsx     # Prediction history page
+│   ├── Features.tsx    # Farmer knowledge / features page
 │   └── NotFound.tsx    # 404 page
 ├── screens/            # App screen components
 │   ├── HomeScreen.tsx        # Crop selection
@@ -161,13 +170,14 @@ Clone this repo and push changes. Pushed changes will also be reflected in Lovab
 
 This project is open source and available under the MIT License.
 
-## 👥 Contributing
+## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to **fork** the repository and submit a **Pull Request**.
+
 
 ## 📞 Support
 
-For support, please open an issue in the GitHub repository.
+If you encounter any issues or have questions, please **open an issue** in the GitHub repository.
 
 ---
 
