@@ -113,8 +113,9 @@ npm install
 npm run dev
 ```
 
-🏗️ Project Structure
+## 🏗️ Project Structure
 
+```plaintext
 src/
 ├── components/
 │   ├── ui/
@@ -139,44 +140,50 @@ src/
 │   ├── predictionService.ts
 │   └── modelPreloader.ts
 └── hooks/
+```
+---
+## 🧠 ML Pipeline
 
-
-🧠 ML Pipeline
-
-1. Image Capture
-
-2. Blur Detection
-
-3. Leaf Detection
-
-4. Image Preprocessing
-
-5. Model Inference
-
-6. Result Display
-
+1. Image Capture (Camera / Gallery)
+2. Blur Detection (Laplacian Variance)
+3. Leaf Detection (COCO-SSD)
+4. Image Preprocessing (Resize, Normalize)
+5. Model Inference (TensorFlow.js)
+6. Result Display (Disease & Solution)
 7. Save Result to History (localStorage)
 
+---
 
-🌍 Localization
+## 🌍 Localization
 
-1. English
-
-2. Bengali (বাংলা)
+- English
+- Bengali (বাংলা)
 
 Language preference is stored in localStorage.
 
-📄 License
+---
+
+## 📄 License
 
 This project is open source and available under the MIT License.
 
-👥 Contributing
+---
+
+## 👥 Contributing
 
 Contributions are welcome. Feel free to submit a Pull Request.
 
-📞 Support
+---
+
+## 📞 Support
 
 For support, please open an issue on the GitHub repository.
+
+---
+
+Made with ❤️ for farmers  
+© 2025 AgriDoctor
+
 
 Made with ❤️ for farmers
 © 2025 AgriDoctor
